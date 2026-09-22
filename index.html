@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn Spanish in Tallinn or Online</title>
+  <title>Learn Spanish in Tallinn & Online</title>
   
   <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -46,9 +46,10 @@
     .lang-switcher .dropdown-toggle {
       border: 1px solid #e2e8f0;
       border-radius: 10px;
-      padding: 6px 12px;
+      padding: 6px 14px;
       font-weight: 600;
       font-size: 0.9rem;
+      background-color: #fff;
     }
 
     /* Hero Section */
@@ -91,15 +92,6 @@
       border-color: var(--primary-color);
       box-shadow: 0 10px 30px rgba(108, 92, 231, 0.12);
       transform: translateY(-4px);
-    }
-    .feature-card {
-      background: #ffffff;
-      border-radius: var(--radius-custom);
-      padding: 32px;
-      border: 1px solid #f0f0f0;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-      height: 100%;
-      transition: all 0.3s ease;
     }
 
     /* Buttons */
@@ -150,54 +142,53 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center gap-3">
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#options">Options</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#courses">Courses</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="#options" data-i18n="nav_options">Options</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="#contact" data-i18n="nav_contact">Contact</a></li>
           
-          <!-- WP Language Switcher Mockup -->
+          <!-- Language Switcher Dropdown -->
           <li class="nav-item lang-switcher dropdown">
-            <a class="btn dropdown-toggle d-flex align-items-center gap-1" href="#" role="button" data-bs-toggle="dropdown">
-              <i class="bi bi-globe"></i> <span>EN</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end border-0 shadow">
-              <li><a class="dropdown-menu-item dropdown-item active fw-bold" href="#">🇬🇧 English (EN)</a></li>
-              <li><a class="dropdown-menu-item dropdown-item" href="#">🇪🇪 Eesti (ET)</a></li>
-              <li><a class="dropdown-menu-item dropdown-item" href="#">🇪🇸 Español (ES)</a></li>
+            <button class="btn dropdown-toggle d-flex align-items-center gap-1" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe"></i> <span id="currentLangLabel">EN</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end border-0 shadow" aria-labelledby="langDropdown">
+              <li><a class="dropdown-item fw-bold" href="#" onclick="changeLanguage('en')">🇬🇧 English (EN)</a></li>
+              <li><a class="dropdown-item fw-bold" href="#" onclick="changeLanguage('et')">🇪🇪 Eesti (ET)</a></li>
+              <li><a class="dropdown-item fw-bold" href="#" onclick="changeLanguage('es')">🇪🇸 Español (ES)</a></li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a class="btn btn-primary-custom" href="#contact">Book Trial Class</a>
+            <a class="btn btn-primary-custom" href="#contact" data-i18n="nav_btn">Book Trial Class</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO SECTION (ENGLISH DEFAULT) -->
+  <!-- HERO SECTION -->
   <section class="hero-section">
     <div class="container">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6">
           <div class="badge-location mb-3">
-            <i class="bi bi-geo-alt-fill text-danger"></i> In-Person in Tallinn & Online
+            <i class="bi bi-geo-alt-fill text-danger"></i> <span data-i18n="hero_badge">In-Person in Tallinn & Online</span>
           </div>
           <h1 class="hero-title mb-4">
-            Learn to speak <span class="highlight">fluent Spanish</span> with a native teacher.
+            <span data-i18n="hero_title_part1">Learn to speak</span> <span class="highlight" data-i18n="hero_title_highlight">fluent Spanish</span> <span data-i18n="hero_title_part2">with a native teacher.</span>
           </h1>
-          <p class="lead text-muted mb-4">
+          <p class="lead text-muted mb-4" data-i18n="hero_description">
             Dynamic and tailored Spanish lessons. Master the language for travel, work, or fun right here in Tallinn or from the comfort of your home.
           </p>
 
           <div class="d-flex flex-wrap gap-3 mb-4 text-secondary">
-            <div><i class="bi bi-check-circle-fill text-success me-1"></i> Small Groups</div>
-            <div><i class="bi bi-check-circle-fill text-success me-1"></i> 100% Conversational</div>
-            <div><i class="bi bi-check-circle-fill text-success me-1"></i> Flexible Hours</div>
+            <div><i class="bi bi-check-circle-fill text-success me-1"></i> <span data-i18n="bullet_1">Small Groups</span></div>
+            <div><i class="bi bi-check-circle-fill text-success me-1"></i> <span data-i18n="bullet_2">100% Conversational</span></div>
+            <div><i class="bi bi-check-circle-fill text-success me-1"></i> <span data-i18n="bullet_3">Flexible Hours</span></div>
           </div>
 
           <div class="d-flex flex-sm-row flex-column gap-3">
-            <a href="#contact" class="btn btn-primary-custom btn-lg">Book Free Demo Lesson</a>
-            <a href="#options" class="btn btn-outline-secondary btn-lg border-0 fw-semibold">Explore Options <i class="bi bi-arrow-right"></i></a>
+            <a href="#contact" class="btn btn-primary-custom btn-lg" data-i18n="hero_cta_primary">Book Free Demo Lesson</a>
+            <a href="#options" class="btn btn-outline-secondary btn-lg border-0 fw-semibold"><span data-i18n="hero_cta_secondary">Explore Options</span> <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
 
@@ -207,7 +198,7 @@
               <div class="bg-primary text-white rounded-circle p-2"><i class="bi bi-geo-fill"></i></div>
               <div>
                 <h6 class="mb-0 fw-bold">Tallinn, Estonia</h6>
-                <small class="text-muted">In-person classes</small>
+                <small class="text-muted" data-i18n="float_card_1">In-person classes</small>
               </div>
             </div>
 
@@ -216,8 +207,8 @@
             <div class="floating-card bottom-left">
               <div class="bg-warning text-white rounded-circle p-2"><i class="bi bi-laptop"></i></div>
               <div>
-                <h6 class="mb-0 fw-bold">Online Classes</h6>
-                <small class="text-muted">Live via Zoom / Meet</small>
+                <h6 class="mb-0 fw-bold" data-i18n="float_card_2_title">Online Classes</h6>
+                <small class="text-muted" data-i18n="float_card_2_sub">Live via Zoom / Meet</small>
               </div>
             </div>
           </div>
@@ -230,8 +221,8 @@
   <section id="options" class="py-5 bg-light">
     <div class="container py-4">
       <div class="text-center max-w-700 mx-auto mb-5">
-        <h2 class="fw-bold fs-1">Choose How You Want to Learn</h2>
-        <p class="text-muted">Designed to fit your lifestyle in Tallinn or anywhere in the world.</p>
+        <h2 class="fw-bold fs-1" data-i18n="modalities_title">Choose How You Want to Learn</h2>
+        <p class="text-muted" data-i18n="modalities_subtitle">Designed to fit your lifestyle in Tallinn or anywhere in the world.</p>
       </div>
 
       <div class="row g-4">
@@ -242,14 +233,14 @@
               <div class="bg-primary text-white rounded-3 p-3"><i class="bi bi-people-fill fs-4"></i></div>
               <span class="badge bg-primary text-white rounded-pill px-3 py-2">Tallinn, Estonia</span>
             </div>
-            <h3 class="fw-bold h4 mb-2">In-Person Lessons</h3>
-            <p class="text-muted">Practice speaking face-to-face in a friendly and interactive environment in central Tallinn.</p>
+            <h3 class="fw-bold h4 mb-2" data-i18n="card_1_title">In-Person Lessons</h3>
+            <p class="text-muted" data-i18n="card_1_desc">Practice speaking face-to-face in a friendly and interactive environment in central Tallinn.</p>
             <ul class="list-unstyled d-flex flex-column gap-2 mb-4">
-              <li><i class="bi bi-check2 text-primary me-2"></i>Immediate feedback & pronunciation practice.</li>
-              <li><i class="bi bi-check2 text-primary me-2"></i>Printed & digital study materials included.</li>
-              <li><i class="bi bi-check2 text-primary me-2"></i>Cultural events & language meetup opportunities.</li>
+              <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="card_1_b1">Immediate feedback & pronunciation practice.</span></li>
+              <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="card_1_b2">Printed & digital study materials included.</span></li>
+              <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="card_1_b3">Cultural events & language meetup opportunities.</span></li>
             </ul>
-            <a href="#contact" class="btn btn-primary-custom w-100">Find Groups in Tallinn</a>
+            <a href="#contact" class="btn btn-primary-custom w-100" data-i18n="card_1_btn">Find Groups in Tallinn</a>
           </div>
         </div>
 
@@ -260,14 +251,14 @@
               <div class="bg-danger text-white rounded-3 p-3"><i class="bi bi-camera-video-fill fs-4"></i></div>
               <span class="badge bg-danger text-white rounded-pill px-3 py-2">100% Online</span>
             </div>
-            <h3 class="fw-bold h4 mb-2">Private & Online Lessons</h3>
-            <p class="text-muted">Learn at your own pace from anywhere with a schedule tailored to your availability.</p>
+            <h3 class="fw-bold h4 mb-2" data-i18n="card_2_title">Private & Online Lessons</h3>
+            <p class="text-muted" data-i18n="card_2_desc">Learn at your own pace from anywhere with a schedule tailored to your availability.</p>
             <ul class="list-unstyled d-flex flex-column gap-2 mb-4">
-              <li><i class="bi bi-check2 text-danger me-2"></i>Interactive digital whiteboard & real-time notes.</li>
-              <li><i class="bi bi-check2 text-danger me-2"></i>Lesson recordings & vocabulary summaries.</li>
-              <li><i class="bi bi-check2 text-danger me-2"></i>Flexible scheduling around your work hours.</li>
+              <li><i class="bi bi-check2 text-danger me-2"></i><span data-i18n="card_2_b1">Interactive digital whiteboard & real-time notes.</span></li>
+              <li><i class="bi bi-check2 text-danger me-2"></i><span data-i18n="card_2_b2">Lesson recordings & vocabulary summaries.</span></li>
+              <li><i class="bi bi-check2 text-danger me-2"></i><span data-i18n="card_2_b3">Flexible scheduling around your work hours.</span></li>
             </ul>
-            <a href="#contact" class="btn btn-outline-danger w-100 fw-bold py-3 rounded-3">Schedule Online Lesson</a>
+            <a href="#contact" class="btn btn-outline-danger w-100 fw-bold py-3 rounded-3" data-i18n="card_2_btn">Schedule Online Lesson</a>
           </div>
         </div>
       </div>
@@ -281,38 +272,38 @@
         <div class="col-lg-8">
           <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4">
             <div class="text-center mb-4">
-              <h2 class="fw-bold">Book Your Trial Lesson</h2>
-              <p class="text-muted">Fill out the form below and we will contact you to confirm your schedule and level.</p>
+              <h2 class="fw-bold" data-i18n="form_title">Book Your Trial Lesson</h2>
+              <p class="text-muted" data-i18n="form_subtitle">Fill out the form below and we will contact you to confirm your schedule and level.</p>
             </div>
 
-            <form>
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Full Name</label>
+                  <label class="form-label fw-semibold" data-i18n="form_label_name">Full Name</label>
                   <input type="text" class="form-control form-control-lg rounded-3" placeholder="e.g. Karl Tamm" required>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Email Address</label>
+                  <label class="form-label fw-semibold" data-i18n="form_label_email">Email Address</label>
                   <input type="email" class="form-control form-control-lg rounded-3" placeholder="karl@example.com" required>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Preferred Format</label>
+                  <label class="form-label fw-semibold" data-i18n="form_label_format">Preferred Format</label>
                   <select class="form-select form-select-lg rounded-3" required>
-                    <option value="" selected disabled>Choose option...</option>
-                    <option value="presencial">In-Person in Tallinn</option>
-                    <option value="online">Online (Zoom/Meet)</option>
+                    <option value="" selected disabled data-i18n="form_opt_choose">Choose option...</option>
+                    <option value="presencial" data-i18n="form_opt_presencial">In-Person in Tallinn</option>
+                    <option value="online" data-i18n="form_opt_online">Online (Zoom/Meet)</option>
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Spanish Level</label>
+                  <label class="form-label fw-semibold" data-i18n="form_label_level">Spanish Level</label>
                   <select class="form-select form-select-lg rounded-3">
-                    <option value="beginner">Beginner (A1-A2)</option>
-                    <option value="intermediate">Intermediate (B1-B2)</option>
-                    <option value="advanced">Advanced (C1)</option>
+                    <option value="beginner" data-i18n="form_lvl_beg">Beginner (A1-A2)</option>
+                    <option value="intermediate" data-i18n="form_lvl_int">Intermediate (B1-B2)</option>
+                    <option value="advanced" data-i18n="form_lvl_adv">Advanced (C1)</option>
                   </select>
                 </div>
                 <div class="col-12 mt-4">
-                  <button type="submit" class="btn btn-primary-custom btn-lg w-100">Send Request</button>
+                  <button type="submit" class="btn btn-primary-custom btn-lg w-100" data-i18n="form_btn">Send Request</button>
                 </div>
               </div>
             </form>
@@ -324,10 +315,181 @@
 
   <footer class="py-4 text-center">
     <div class="container">
-      <p class="mb-0 text-muted">&copy; 2026 HablaEspañol Tallinn. Spanish Lessons In-Person & Online.</p>
+      <p class="mb-0 text-muted" data-i18n="footer_text">&copy; 2026 HablaEspañol Tallinn. Spanish Lessons In-Person & Online.</p>
     </div>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Internationalization (i18n) JS Script -->
+  <script>
+    const translations = {
+      en: {
+        nav_options: "Options",
+        nav_contact: "Contact",
+        nav_btn: "Book Trial Class",
+        hero_badge: "In-Person in Tallinn & Online",
+        hero_title_part1: "Learn to speak",
+        hero_title_highlight: "fluent Spanish",
+        hero_title_part2: "with a native teacher.",
+        hero_description: "Dynamic and tailored Spanish lessons. Master the language for travel, work, or fun right here in Tallinn or from the comfort of your home.",
+        bullet_1: "Small Groups",
+        bullet_2: "100% Conversational",
+        bullet_3: "Flexible Hours",
+        hero_cta_primary: "Book Free Demo Lesson",
+        hero_cta_secondary: "Explore Options",
+        float_card_1: "In-person classes",
+        float_card_2_title: "Online Classes",
+        float_card_2_sub: "Live via Zoom / Meet",
+        modalities_title: "Choose How You Want to Learn",
+        modalities_subtitle: "Designed to fit your lifestyle in Tallinn or anywhere in the world.",
+        card_1_title: "In-Person Lessons",
+        card_1_desc: "Practice speaking face-to-face in a friendly and interactive environment in central Tallinn.",
+        card_1_b1: "Immediate feedback & pronunciation practice.",
+        card_1_b2: "Printed & digital study materials included.",
+        card_1_b3: "Cultural events & language meetup opportunities.",
+        card_1_btn: "Find Groups in Tallinn",
+        card_2_title: "Private & Online Lessons",
+        card_2_desc: "Learn at your own pace from anywhere with a schedule tailored to your availability.",
+        card_2_b1: "Interactive digital whiteboard & real-time notes.",
+        card_2_b2: "Lesson recordings & vocabulary summaries.",
+        card_2_b3: "Flexible scheduling around your work hours.",
+        card_2_btn: "Schedule Online Lesson",
+        form_title: "Book Your Trial Lesson",
+        form_subtitle: "Fill out the form below and we will contact you to confirm your schedule and level.",
+        form_label_name: "Full Name",
+        form_label_email: "Email Address",
+        form_label_format: "Preferred Format",
+        form_opt_choose: "Choose option...",
+        form_opt_presencial: "In-Person in Tallinn",
+        form_opt_online: "Online (Zoom/Meet)",
+        form_label_level: "Spanish Level",
+        form_lvl_beg: "Beginner (A1-A2)",
+        form_lvl_int: "Intermediate (B1-B2)",
+        form_lvl_adv: "Advanced (C1)",
+        form_btn: "Send Request",
+        footer_text: "© 2026 HablaEspañol Tallinn. Spanish Lessons In-Person & Online."
+      },
+      et: {
+        nav_options: "Valikud",
+        nav_contact: "Kontakt",
+        nav_btn: "Broneeri proovitund",
+        hero_badge: "Kohapeal Tallinnas ja Veebis",
+        hero_title_part1: "Õpi rääkima",
+        hero_title_highlight: "ladusat hispaania keelt",
+        hero_title_part2: "emakeelse õpetajaga.",
+        hero_description: "Dünaamilised ja personaalsed hispaania keele tunnid. Õpi keelt reisimiseks, tööks või lõbuks Tallinnas või mugavalt kodus.",
+        bullet_1: "Väikesed rühmad",
+        bullet_2: "100% suhtluspõhine",
+        bullet_3: "Fleksibilne ajakava",
+        hero_cta_primary: "Broneeri tasuta proovitund",
+        hero_cta_secondary: "Vaata valikuid",
+        float_card_1: "Tunnid kohapeal",
+        float_card_2_title: "Veebitunnid",
+        float_card_2_sub: "Otseülekandena Zoomis / Meetis",
+        modalities_title: "Vali endale sobiv õppeviis",
+        modalities_subtitle: "Mõeldud sobima sinu elustiiliga Tallinnas või ükskõik kus maailmas.",
+        card_1_title: "Tunnid kohapeal",
+        card_1_desc: "Harjuta rääkimist silmast silma sõbralikus ja interaktiivses keskkonnas Tallinna kesklinnas.",
+        card_1_b1: "Kohene tagasiside ja häälduse harjutamine.",
+        card_1_b2: "Paberil ja digitaalsed õppematerjalid hinnas.",
+        card_1_b3: "Kultuuriüritused ja keelekohtumised.",
+        card_1_btn: "Otsi rühmi Tallinnas",
+        card_2_title: "Eratunnid ja Veebitunnid",
+        card_2_desc: "Õpi endale sobivas tempos ükskõik kust, personaalse ajakava alusel.",
+        card_2_b1: "Interaktiivne digitahvel ja reaalajas märkmed.",
+        card_2_b2: "Tundide salvestused ja sõnavara kokkuvõtted.",
+        card_2_b3: "Paindlik ajakava vastavalt sinu tööajale.",
+        card_2_btn: "Broneeri veebitund",
+        form_title: "Broneeri oma proovitund",
+        form_subtitle: "Täida allolev vorm ja võtame ühendust, et kokku leppida aeg ja tase.",
+        form_label_name: "Täisnimi",
+        form_label_email: "E-posti aadress",
+        form_label_format: "Eelistatud formaat",
+        form_opt_choose: "Vali valik...",
+        form_opt_presencial: "Kohapeal Tallinnas",
+        form_opt_online: "Veebis (Zoom/Meet)",
+        form_label_level: "Hispaania keele tase",
+        form_lvl_beg: "Algaja (A1-A2)",
+        form_lvl_int: "Kesktase (B1-B2)",
+        form_lvl_adv: "Edasijõudnu (C1)",
+        form_btn: "Saada päring",
+        footer_text: "© 2026 HablaEspañol Tallinn. Hispaania keele tunnid kohapeal ja veebis."
+      },
+      es: {
+        nav_options: "Modalidades",
+        nav_contact: "Contacto",
+        nav_btn: "Reservar Clase Demo",
+        hero_badge: "Presencial en Tallinn y Online",
+        hero_title_part1: "Aprende a hablar",
+        hero_title_highlight: "Español fluido",
+        hero_title_part2: "con un profesor nativo.",
+        hero_description: "Clases dinámicas y personalizadas adaptadas a tus objetivos. Domina el idioma para viajar, trabajar o disfrutar desde Tallinn o tu casa.",
+        bullet_1: "Grupos Reducidos",
+        bullet_2: "100% Conversacional",
+        bullet_3: "Horarios Flexibles",
+        hero_cta_primary: "Reservar Clase Prueba",
+        hero_cta_secondary: "Ver Modalidades",
+        float_card_1: "Clases presenciales",
+        float_card_2_title: "Clases Online",
+        float_card_2_sub: "En vivo por Zoom / Meet",
+        modalities_title: "Elegí cómo querés aprender",
+        modalities_subtitle: "Diseñado para adaptarse a tu estilo de vida en Tallinn o en cualquier parte del mundo.",
+        card_1_title: "Clases Presenciales",
+        card_1_desc: "Practicá la conversación cara a cara en un ambiente cómodo e interactivo en el centro de Tallinn.",
+        card_1_b1: "Corrección inmediata de pronunciación y feedback.",
+        card_1_b2: "Materiales impresos y digitales incluidos.",
+        card_1_b3: "Eventos culturales e intercambios de idiomas.",
+        card_1_btn: "Ver Grupos en Tallinn",
+        card_2_title: "Clases Privadas y Online",
+        card_2_desc: "Aprendé a tu propio ritmo desde donde estés con un horario adaptado a tu disponibilidad.",
+        card_2_b1: "Pizarra digital interactiva y notas en tiempo real.",
+        card_2_b2: "Grabaciones de clase y resúmenes de vocabulario.",
+        card_2_b3: "Horarios flexibles adaptados a tu trabajo.",
+        card_2_btn: "Agendar Clase Online",
+        form_title: "Reservá tu Clase de Prueba",
+        form_subtitle: "Completá el formulario y te contactaremos para coordinar tu horario y nivel.",
+        form_label_name: "Nombre Completo",
+        form_label_email: "Correo Electrónico",
+        form_label_format: "Modalidad Preferida",
+        form_opt_choose: "Seleccionar opción...",
+        form_opt_presencial: "Presencial en Tallinn",
+        form_opt_online: "Online (Zoom/Meet)",
+        form_label_level: "Nivel de Español",
+        form_lvl_beg: "Principiante (A1-A2)",
+        form_lvl_int: "Intermedio (B1-B2)",
+        form_lvl_adv: "Avanzado (C1)",
+        form_btn: "Enviar Solicitud",
+        footer_text: "© 2026 HablaEspañol Tallinn. Clases de Español Presenciales y Online."
+      }
+    };
+
+    function changeLanguage(lang) {
+      document.getElementById('currentLangLabel').textContent = lang.toUpperCase();
+      const elements = document.querySelectorAll('[data-i18n]');
+      
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('preferredLang', lang);
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert("¡Gracias por tu mensaje! Te contactaremos muy pronto.");
+      document.getElementById('contactForm').reset();
+    }
+
+    // Load saved language on start (default: English)
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      changeLanguage(savedLang);
+    });
+  </script>
 </body>
 </html>
